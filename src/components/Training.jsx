@@ -1,15 +1,33 @@
 import PropTypes from "prop-types";
-import "./Spinner.scss";
+import "./Training.scss";
 
-
-const Training = ({ trainings }) => {
+const Training = ({ trainings, language }) => {
   return (
     <div className="training">
       <h2>Training</h2>
       <ul>
         {trainings.map((training) => (
-          <li key={training.id}>
-            {training.title} - {training.institution}
+          <li key={training._id}>
+            <h3>
+              {training.title[language] || training.title.en} -{" "}
+              {training.institution[language] || training.institution.en}
+            </h3>
+            <p>
+              {new Date(training.startDate).toLocaleDateString(language, {
+                year: "numeric",
+                month: "long",
+              })}{" "}
+              -{" "}
+              {new Date(training.endDate).toLocaleDateString(language, {
+                year: "numeric",
+                month: "long",
+              })}
+            </p>
+            <ul>
+              {training.keySkills[language].map((skill, index) => (
+                <li key={index}>{skill}</li>
+              ))}
+            </ul>
           </li>
         ))}
       </ul>
@@ -18,13 +36,17 @@ const Training = ({ trainings }) => {
 };
 
 Training.propTypes = {
-    trainings: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        title: PropTypes.string.isRequired,
-        institution: PropTypes.string.isRequired,
-      })
-    ).isRequired,
-  };
+  trainings: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      title: PropTypes.object.isRequired, // Multilingual titles
+      institution: PropTypes.object.isRequired, // Multilingual institutions
+      keySkills: PropTypes.object.isRequired, // Multilingual key skills
+      startDate: PropTypes.string.isRequired, // ISO date format
+      endDate: PropTypes.string.isRequired, // ISO date format
+    })
+  ).isRequired,
+  language: PropTypes.string.isRequired, // Current language
+};
 
 export default Training;

@@ -7,7 +7,8 @@ const Jobs = ({ jobs }) => {
       <ul>
         {jobs.map((job) => (
           <li key={job.id}>
-            {job.position} at {job.company} ({job.years})
+            {/* Display the job position and company */}
+            <strong>{job.position}</strong> at <em>{job.company}</em> ({job.years})
           </li>
         ))}
       </ul>
@@ -18,10 +19,10 @@ const Jobs = ({ jobs }) => {
 Jobs.propTypes = {
   jobs: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired, // Now expecting `id` after mapping
       position: PropTypes.string.isRequired,
       company: PropTypes.string.isRequired,
-      years: PropTypes.string.isRequired,
+      years: PropTypes.string.isRequired, // Formatted years (e.g., "2012 - 2014")
     })
   ).isRequired,
 };

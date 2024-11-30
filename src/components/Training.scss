@@ -1,0 +1,42 @@
+.training {
+    margin: 20px 0;
+  
+    h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+  
+    ul {
+      list-style-type: none;
+      padding: 0;
+  
+      li {
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+  
+        h3 {
+          font-size: 18px;
+          margin-bottom: 5px;
+          font-weight: bold;
+        }
+  
+        p {
+          margin: 5px 0;
+          font-style: italic;
+        }
+  
+        ul {
+          margin-top: 10px;
+          list-style-type: disc;
+          padding-left: 20px;
+  
+          li {
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
+  
