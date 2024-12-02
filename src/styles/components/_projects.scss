@@ -1,0 +1,42 @@
+@use "../abstracts/variables" as vars; 
+@use "../abstracts/mixins" as mixins;
+
+.projects {
+  margin: 20px 0;
+  border: 5px solid rgb(89, 0, 255);
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: rgb(82, 80, 9); // Test sans variable pour vérifier l'application
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .project-card {
+    padding: 15px;
+    border: 1px solid vars.$secondary-color;
+    background-color: vars.$background-color;
+    @include mixins.center-flex; // Applique un mixin pour centrer le contenu
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      color: vars.$primary-color;
+    }
+
+    p {
+      font-size: 1rem;
+      color: vars.$secondary-color;
+    }
+  }
+}

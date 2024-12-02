@@ -1,0 +1,15 @@
+@use 'variables' as vars;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: vars.$font-main;
+  background-color: vars.$secondary-color;
+  line-height: 1.6;
+  overflow-x: hidden;
+}

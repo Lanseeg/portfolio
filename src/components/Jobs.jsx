@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "../styles/components/_jobs.scss";
 
 const Jobs = ({ jobs }) => {
   return (

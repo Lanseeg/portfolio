@@ -1,10 +1,9 @@
 import PropTypes from "prop-types";
-import "./Skills.scss";
+import "../styles/components/_skills.scss";
 
 const Skills = ({ skills }) => {
   return (
     <div className="skills">
-      <h2>Skills</h2>
       <div className="skills-container">
         {skills.map((skill) => (
           <div key={skill._id} className="skill-card">

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import "./Training.scss";
+import "../styles/components/_training.scss";
 
 const Training = ({ trainings, language }) => {
   return (

@@ -1,0 +1,23 @@
+{
+  "en": {
+    "welcome": "Welcome to My Portfolio",
+    "presentation": "About Me",
+    "presentationText": "I am a passionate full-stack web developer with expertise in creating dynamic and responsive web applications.",
+    "skills": "Skills",
+    "jobs": "Jobs"
+  },
+  "fr": {
+    "welcome": "Bienvenue sur mon portfolio",
+    "presentation": "À propos de moi",
+    "presentationText": "Je suis un développeur web full-stack passionné, expert dans la création d'applications web dynamiques et responsives.",
+    "skills": "Compétences",
+    "jobs": "Emplois"
+  },
+  "br": {
+    "welcome": "Degemer mat er ma porched",
+    "presentation": "Diwar-benn ac'hanon",
+    "presentationText": "Me zo un diorroer web full-stack a youl vat, barrek war sevel arloadoù web dinamek ha startwel.",
+    "skills": "Meskhedoù",
+    "jobs": "Labourioù"
+  }
+}
