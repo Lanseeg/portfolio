@@ -1,12 +1,14 @@
+// src/Router.jsx
+import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
 
-const AppRouter = () => {
+const AppRouter = ({ language, handleLanguageChange }) => {
   return (
     <Router>
-      <Layout>
+      <Layout language={language} handleLanguageChange={handleLanguageChange}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -14,6 +16,11 @@ const AppRouter = () => {
       </Layout>
     </Router>
   );
+};
+
+AppRouter.propTypes = {
+  language: PropTypes.string.isRequired,
+  handleLanguageChange: PropTypes.func.isRequired,
 };
 
 export default AppRouter;

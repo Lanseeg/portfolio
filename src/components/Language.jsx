@@ -1,24 +1,24 @@
-import PropTypes from "prop-types";
-import "../styles/components/_language.scss";
-
-const Language = ({ language, onChangeLanguage }) => {
+// src/components/Language.jsx
+import PropTypes from 'prop-types';
+import '../styles/components/_language.scss';
+const Language = ({ language, handleLanguageChange }) => {
   return (
     <div className="language-selector">
       <button
-        onClick={() => onChangeLanguage("en")}
-        className={language === "en" ? "active" : ""}
+        onClick={() => handleLanguageChange('en')}
+        className={language === 'en' ? 'active' : ''}
       >
         EN
       </button>
       <button
-        onClick={() => onChangeLanguage("fr")}
-        className={language === "fr" ? "active" : ""}
+        onClick={() => handleLanguageChange('fr')}
+        className={language === 'fr' ? 'active' : ''}
       >
         FR
       </button>
       <button
-        onClick={() => onChangeLanguage("br")}
-        className={language === "br" ? "active" : ""}
+        onClick={() => handleLanguageChange('br')}
+        className={language === 'br' ? 'active' : ''}
       >
         BR
       </button>
@@ -28,7 +28,7 @@ const Language = ({ language, onChangeLanguage }) => {
 
 Language.propTypes = {
   language: PropTypes.string.isRequired,
-  onChangeLanguage: PropTypes.func.isRequired,
+  handleLanguageChange: PropTypes.func.isRequired,
 };
 
 export default Language;

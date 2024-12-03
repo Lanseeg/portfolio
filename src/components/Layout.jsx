@@ -1,17 +1,15 @@
-//enveloppe toutes les pages et contient les éléments communs comme le Header, le Footer, et tout autre composant partagé
+// src/components/Layout.jsx
 import "../styles/components/_layout.scss";
 
 import PropTypes from 'prop-types';
 import Header from './Header';
 import Footer from './Footer';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, language, handleLanguageChange }) => {
   return (
     <div className="layout">
-      <Header />
-      <main className="layout__content">
-        {children}
-      </main>
+      <Header language={language} handleLanguageChange={handleLanguageChange} />
+      <main>{children}</main>
       <Footer />
     </div>
   );
@@ -19,6 +17,8 @@ const Layout = ({ children }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  language: PropTypes.string.isRequired,
+  handleLanguageChange: PropTypes.func.isRequired,
 };
 
 export default Layout;

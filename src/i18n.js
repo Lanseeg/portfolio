@@ -1,23 +1,30 @@
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
 
-import translationEN from "./locales/en.json";
-import translationFR from "./locales/fr.json";
-import translationBR from "./locales/br.json";
+// src/i18n.js
 
-const resources = {
-  en: { translation: translationEN },
-  fr: { translation: translationFR },
-  br: { translation: translationBR },
-};
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
 
-i18n.use(initReactI18next).init({
-  resources,
-  lng: "en", // Default language
-  fallbackLng: "en", // Fallback if the language is not available
-  interpolation: {
-    escapeValue: false, // React already escapes values
-  },
-});
+// 1 - import translation files
+import enNav from './locales/en/nav.json';
+import frNav from './locales/fr/nav.json';
+import brNav from './locales/br/nav.json';
+
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    resources: {
+      en: { nav: enNav }, // add locales
+      fr: { nav: frNav },
+      br: { nav: brNav },
+    },
+    fallbackLng: 'en',
+    ns: ['nav'], // declare namespaces
+    defaultNS: 'nav',
+    interpolation: {
+      escapeValue: false,
+    },
+  });
 
 export default i18n;
