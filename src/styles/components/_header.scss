@@ -1,19 +1,26 @@
+// src/styles/components/_header.scss
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #9e1e1e94;
-  
-    .logo {
-      h1 {
-        margin: 0;
-      }
-      p {
-        margin: 0;
-        font-size: 0.9rem;
-        color: #888;
-      }
-    }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #252525;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    font-family: 'Major Mono Display', monospace;
+    background: linear-gradient(
+      90deg,
+      #9E4F16 0%,
+      #cc8d28 19%,
+      #EF980D 65%,
+      #55390C 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
   }
-  
+}

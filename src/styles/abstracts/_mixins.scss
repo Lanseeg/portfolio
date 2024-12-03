@@ -1,14 +1,18 @@
 @use 'variables' as vars;
+@use "sass:map";
+
+$breakpoints: (
+  tablet: 768px,
+  mobile: 480px
+);
 
 @mixin respond-to($breakpoint) {
-  @if $breakpoint == tablet {
-    @media (max-width: 880px) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media (max-width: map.get($breakpoints, $breakpoint)) {
       @content;
     }
-  } @else if $breakpoint == mobile {
-    @media (max-width: 600px) {
-      @content;
-    }
+  } @else {
+    @warn "Breakpoint #{$breakpoint} not defined in breakpoints.";
   }
 }
 
