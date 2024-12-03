@@ -1,10 +1,18 @@
 // src/components/Language.jsx
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../styles/components/_language.scss';
 
 const Language = ({ language, handleLanguageChange }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Read language from localStorage
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('selectedLanguage');
+    if (savedLanguage && savedLanguage !== language) {
+      handleLanguageChange(savedLanguage);
+    }
+  }, [language, handleLanguageChange]);
 
   const toggleMenu = () => {
     setIsOpen((prevState) => !prevState);
@@ -12,6 +20,7 @@ const Language = ({ language, handleLanguageChange }) => {
 
   const selectLanguage = (lang) => {
     handleLanguageChange(lang);
+    localStorage.setItem('selectedLanguage', lang);
     setIsOpen(false);
   };
 

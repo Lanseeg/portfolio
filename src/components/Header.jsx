@@ -13,8 +13,8 @@ const Header = ({ language, handleLanguageChange }) => {
         </h1>
       </a>
       <div className="header-options">
-      <Nav />
-      <Language language={language} handleLanguageChange={handleLanguageChange} />
+        <Nav language={language} handleLanguageChange={handleLanguageChange} />
+        <Language language={language} handleLanguageChange={handleLanguageChange} />
       </div>
     </header>
   );

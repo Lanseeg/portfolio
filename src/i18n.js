@@ -19,11 +19,15 @@ i18n
       fr: { nav: frNav },
       br: { nav: brNav },
     },
-    fallbackLng: 'en',
+    fallbackLng: 'en', // Default language
     ns: ['nav'], // 3 - declare namespaces
     defaultNS: 'nav',
     interpolation: {
       escapeValue: false,
+    },
+    detection: {
+      order: ['localStorage', 'navigator'], // localStorage has higher priority
+      caches: ['localStorage'], // language cache in localStorage
     },
   });
 

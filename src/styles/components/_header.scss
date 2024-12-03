@@ -6,6 +6,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 997;
   padding: 10px 20px;
   background-color: vars.$third-color;
 
@@ -59,6 +61,15 @@
 
     @include mixins.respond-to(mobile) {
       font-size: 2rem;
+    }
+  }
+
+  // In mobile & tablet mode, hide the language selector
+  .language-selector {
+    display: block;
+
+    @include mixins.respond-to(tablet) {
+      display: none;
     }
   }
 }
