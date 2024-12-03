@@ -1,20 +1,62 @@
+@use '../abstracts/variables' as vars;
+
 .language-selector {
-    button {
-      margin: 0 5px;
-      padding: 5px 10px;
-      border: none;
-      background-color: #007bff;
-      color: white;
-      cursor: pointer;
-  
-      &.active {
-        font-weight: bold;
-        background-color: #0056b3;
-      }
-  
-      &:hover {
-        background-color: #0056b3;
+  position: left;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 5px;
+
+  button {
+    padding: 6px 6px 0px 6px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3f3f3f;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: vars.$font-main;
+
+    &.active {
+      font-weight: bold;
+      background-color: #444444;
+    }
+
+    &:hover {
+      background-color: vars.$primary-color;
+    }
+  }
+
+  .language-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin: 5px 0;
+    padding: 0;
+    list-style: none;
+    background-color: #272727;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
+    li {
+      margin: 0;
+
+      button {
+        width: 100%;
+        text-align: left;
+        padding: 5px 10px;
+        border: none;
+        background-color: transparent;
+        color: white;
+        cursor: pointer;
+
+        &:hover {
+          background-color: vars.$primary-color;
+        }
+
+        &.active {
+          font-weight: bold;
+        }
       }
     }
   }
-  
+}

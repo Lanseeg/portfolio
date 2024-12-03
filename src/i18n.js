@@ -15,12 +15,12 @@ i18n
   .use(initReactI18next)
   .init({
     resources: {
-      en: { nav: enNav }, // add locales
+      en: { nav: enNav }, // 2 - add locales
       fr: { nav: frNav },
       br: { nav: brNav },
     },
     fallbackLng: 'en',
-    ns: ['nav'], // declare namespaces
+    ns: ['nav'], // 3 - declare namespaces
     defaultNS: 'nav',
     interpolation: {
       escapeValue: false,

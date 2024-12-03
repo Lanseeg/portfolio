@@ -6,10 +6,16 @@ import '../styles/components/_header.scss';
 
 const Header = ({ language, handleLanguageChange }) => {
   return (
-    <header className="header">
-      <h1>peRan.deV</h1>
-      <Language language={language} handleLanguageChange={handleLanguageChange} />
+    <header className="header" role="banner">
+      <a href="/" className="site-logo" aria-label="Return to the homepage">
+        <h1>
+          peRan<span className="dot-dev">.deV</span>
+        </h1>
+      </a>
+      <div className="header-options">
       <Nav />
+      <Language language={language} handleLanguageChange={handleLanguageChange} />
+      </div>
     </header>
   );
 };

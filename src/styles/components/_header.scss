@@ -1,10 +1,39 @@
 // src/styles/components/_header.scss
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/variables' as vars;
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #252525;
+  background-color: vars.$third-color;
+
+  .site-logo {
+    text-decoration: none;
+  }
+
+  .site-logo:hover h1 {
+    transform: scale(1.01);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .header-options {
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+
+    @include mixins.respond-to(tablet) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    @include mixins.respond-to(mobile) {
+      align-items: stretch;
+    }
+  }
 
   h1 {
     font-size: 2.5rem;
@@ -14,13 +43,22 @@
       90deg,
       #9E4F16 0%,
       #cc8d28 19%,
-      #EF980D 65%,
-      #55390C 100%
+      #ef0da4 65%,
+      #be0878 100%
     );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
 
+    .dot-dev {
+      color: #ffffff;
+      background: none;
+      -webkit-text-fill-color: #ffffff;
+    }
+
+    @include mixins.respond-to(mobile) {
+      font-size: 2rem;
+    }
   }
 }
