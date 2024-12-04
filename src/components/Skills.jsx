@@ -1,39 +1,24 @@
-import PropTypes from "prop-types";
-import "../styles/components/_skills.scss";
+import { useTranslation } from 'react-i18next';
+import '../styles/components/_skills.scss';
+import SkillCard from './SkillCard';
+import skills from '../content/skills.json';
 
-const Skills = ({ skills }) => {
+const Skills = () => {
+  const { t } = useTranslation('skills');
+
   return (
-    <div className="skills">
-      <div className="skills-container">
+    <section className="skills">
+      <h2>{t('title')}</h2>
+      {t('description') && <p className="skills__description">{t('description')}</p>}
+
+      {/* Display skillcards */}
+      <div className="skills__grid">
         {skills.map((skill) => (
-          <div key={skill._id} className="skill-card">
-            <h3>{skill.name}</h3>
-            <div className="stars">
-              {Array.from({ length: 5 }, (_, index) => (
-                <span
-                  key={index}
-                  className={index < skill.level ? "star filled" : "star"}
-                >
-                  ★
-                </span>
-              ))}
-            </div>
-          </div>
+          <SkillCard key={skill.name} name={skill.name} level={parseInt(skill.level, 10)} />
         ))}
       </div>
-    </div>
+    </section>
   );
-};
-
-Skills.propTypes = {
-  skills: PropTypes.arrayOf(
-    PropTypes.shape({
-      _id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      level: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-        .isRequired,
-    })
-  ).isRequired,
 };
 
 export default Skills;
