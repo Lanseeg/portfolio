@@ -30,6 +30,12 @@
     &:hover {
       color: vars.$primary-color;
     }
+
+    &.active {
+      color: vars.$primary-color;
+      border-bottom: 1px solid vars.$primary-color;
+    }
+
   }
 
   .nav__toggle {
@@ -79,11 +85,17 @@
       font-size: 1.2rem;
       text-align: left;
       text-decoration: none;
-    }
+    
 
-    .nav__item a:hover {
+    &:hover {
       color: #be6526;
     }
+
+    &.active {
+      font-weight: bold;
+      color: vars.$primary-color;
+    }
+  }
   }
 
   .nav__language {

@@ -1,17 +1,18 @@
 // src/components/Header.jsx
 import PropTypes from 'prop-types';
 import Nav from './Nav';
+import { NavLink } from 'react-router-dom';
 import Language from './Language';
 import '../styles/components/_header.scss';
 
 const Header = ({ language, handleLanguageChange }) => {
   return (
     <header className="header" role="banner">
-      <a href="/" className="site-logo" aria-label="Return to the homepage">
+     <NavLink to="/" className="site-logo" aria-label="Return to the homepage">
         <h1>
           peRan<span className="dot-dev">.deV</span>
         </h1>
-      </a>
+      </NavLink>
       <div className="header-options">
         <Nav language={language} handleLanguageChange={handleLanguageChange} />
         <Language language={language} handleLanguageChange={handleLanguageChange} />
