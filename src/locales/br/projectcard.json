@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "title": "React Portfolio",
+    "image": "/assets/images/projects/react-portfolio.jpg",
+    "tags": ["Front-End", "React"],
+    "description": "A portfolio built with React showcasing my skills and projects."
+  },
+  {
+    "id": "2",
+    "title": "Node.js API",
+    "image": "/assets/images/projects/node-api.jpg",
+    "tags": ["Back-End", "Node.js"],
+    "description": "A RESTful API built with Node.js and Express."
+  }
+]
