@@ -10,7 +10,10 @@ const AppRouter = ({ language, handleLanguageChange }) => {
     <Router>
       <Layout language={language} handleLanguageChange={handleLanguageChange}>
         <Routes>
-          <Route path="/" element={<Home />} />
+        <Route
+            path="/"
+            element={<Home language={language} />}
+          />
           <Route path="/about" element={<About />} />
         </Routes>
       </Layout>

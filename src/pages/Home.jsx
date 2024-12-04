@@ -1,11 +1,18 @@
+// src/pages/Home.jsx
+import PropTypes from "prop-types";
 import "../styles/pages/_home.scss";
-const Home = () => {
+import Presentation from '../components/Presentation';
+
+const Home = ({ language }) => {
   return (
     <div className="home">
-      <h2>Welcome to My Portfolio</h2>
-      <p>This is the homepage.</p>
+      <Presentation language={language} />
     </div>
   );
+};
+
+Home.propTypes = {
+  language: PropTypes.string.isRequired,
 };
 
 export default Home;
