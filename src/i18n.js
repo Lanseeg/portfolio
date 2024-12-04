@@ -13,6 +13,9 @@ import brPresentation from './locales/br/presentation.json';
 import enSkills from './locales/en/skills.json';
 import frSkills from './locales/fr/skills.json';
 import brSkills from './locales/br/skills.json';
+import enProjects from './locales/en/projects.json';
+import frProjects from './locales/fr/projects.json';
+import brProjects from './locales/br/projects.json';
 
 i18n
   .use(LanguageDetector)
@@ -23,20 +26,23 @@ i18n
         nav: enNav,
         presentation: enPresentation,
         skills: enSkills,
+        projects: enProjects,
       },
       fr: {
         nav: frNav,
         presentation: frPresentation,
         skills: frSkills,
+        projects: frProjects,
       },
       br: {
         nav: brNav,
         presentation: brPresentation,
         skills: brSkills,
+        projects: brProjects,
       },
     },
     fallbackLng: 'en', // Default language
-    ns: ['nav', 'presentation', 'skills'], // Declare namespaces
+    ns: ['nav', 'presentation', 'skills', 'projects'], // Declare namespaces
     defaultNS: 'nav',
     interpolation: {
       escapeValue: false,
