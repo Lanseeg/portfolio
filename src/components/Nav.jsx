@@ -32,7 +32,7 @@ const Nav = ({ language, handleLanguageChange }) => {
           </li>
         </ul>
 
-        {/* Toogle menu button for smartphone and tablet */}
+        {/* Toggle menu button for smartphone and tablet */}
         <button
           className="nav__toggle"
           onClick={toggleMenu}
@@ -42,29 +42,27 @@ const Nav = ({ language, handleLanguageChange }) => {
         </button>
       </nav>
 
-      {/* SMARTPHONE&TABLET - Dropdown */}
-      {isMenuOpen && (
-        <div className="nav__dropdown">
-          <ul className="nav__list">
-            <li className="nav__item">
-              <a href="/">{t("home")}</a>
-            </li>
-            <li className="nav__item">
-              <a href="/about">{t("about")}</a>
-            </li>
-            <li className="nav__item">
-              <a href="/projects">{t("projects")}</a>
-            </li>
-            <li className="nav__item">
-              <a href="/contact">{t("contact")}</a>
-            </li>
-          </ul>
-          {/* Dropdown language selector */}
-          <div className="nav__language">
-            <Language language={language} handleLanguageChange={handleLanguageChange} />
-          </div>
+      {/* Dropdown menu for tablet and smartphone */}
+      <div className={`nav__dropdown ${isMenuOpen ? 'visible' : ''}`}>
+        <ul className="nav__list">
+          <li className="nav__item">
+            <a href="/">{t("home")}</a>
+          </li>
+          <li className="nav__item">
+            <a href="/about">{t("about")}</a>
+          </li>
+          <li className="nav__item">
+            <a href="/projects">{t("projects")}</a>
+          </li>
+          <li className="nav__item">
+            <a href="/contact">{t("contact")}</a>
+          </li>
+        </ul>
+        {/* Dropdown language selector */}
+        <div className="nav__language">
+          <Language language={language} handleLanguageChange={handleLanguageChange} />
         </div>
-      )}
+      </div>
     </>
   );
 };
