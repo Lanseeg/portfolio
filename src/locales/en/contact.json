@@ -1,0 +1,9 @@
+{
+  "title": "Contact Me",
+  "name": "Name",
+  "email": "Email",
+  "message": "Message",
+  "sendButton": "Send",
+  "successMessage": "Your message was successfully sent!",
+  "errorMessage": "An error occurred. Please try again."
+}

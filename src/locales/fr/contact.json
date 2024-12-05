@@ -1,0 +1,10 @@
+{
+    "title": "Contactez-moi",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "sendButton": "Envoyer",
+    "successMessage": "Votre message a été envoyé avec succès ! Je reviens vers vous rapidement.",
+    "errorMessage": "Une erreur est survenue. Veuillez réessayer."
+  }
+  

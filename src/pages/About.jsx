@@ -12,7 +12,7 @@ const About = () => {
         <div className="about__photo-section">
           <img
             src="/images/about/pg.png"
-            alt={t('photoCaption')} // Caption dans les traductions
+            alt={t('photoCaption')}
             className="about__photo"
           />
           <h3 className="about__title">{t('title')}</h3>

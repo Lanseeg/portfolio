@@ -1,11 +1,11 @@
-import "../styles/pages/_about.scss";
-const About = () => {
+import ContactForm from '../components/ContactForm';
+
+const Contact = () => {
   return (
-    <div className="about">
-      <h1>Contact</h1>
-      <p>Contact me</p>
+    <div className="contact-page">
+      <ContactForm />
     </div>
   );
 };
 
-export default About;
+export default Contact;
