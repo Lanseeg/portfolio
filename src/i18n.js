@@ -27,6 +27,10 @@ import brProjectCard from './locales/br/projectcard.json';
 import enEducation from './locales/en/education.json';
 import frEducation from './locales/fr/education.json';
 import brEducation from './locales/br/education.json';
+//ABOUT
+import enAbout from './locales/en/about.json';
+import frAbout from './locales/fr/about.json';
+import brAbout from './locales/br/about.json';
 
 // 2 - Add ressource & namespace
 i18n
@@ -41,6 +45,7 @@ i18n
         projects: enProjects,
         projectCard: enProjectCard,
         education: enEducation,
+        about: enAbout,
       },
       fr: {
         nav: frNav,
@@ -49,6 +54,7 @@ i18n
         projects: frProjects,
         projectCard: frProjectCard,
         education: frEducation,
+        about: frAbout,
       },
       br: {
         nav: brNav,
@@ -57,10 +63,11 @@ i18n
         projects: brProjects,
         projectCard: brProjectCard,
         education: brEducation,
+        about: brAbout,
       },
     },
     fallbackLng: 'en',
-    ns: ['nav', 'presentation', 'skills', 'projects', 'projectCard', 'education'],
+    ns: ['nav', 'presentation', 'skills', 'projects', 'projectCard', 'education', 'about'],
     defaultNS: 'projects',
     interpolation: {
       escapeValue: false,
