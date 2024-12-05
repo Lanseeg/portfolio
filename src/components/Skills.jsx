@@ -9,7 +9,7 @@ import skills from "../content/skills.json";
 const Skills = () => {
   const { t } = useTranslation("skills");
   const controls = useAnimation();
-  const [ref, inView] = useInView({ threshold: 0.3 });
+  const [ref, inView] = useInView({ threshold: 0.2 });
 
   const containerVariants = {
     hidden: { opacity: 0 },
