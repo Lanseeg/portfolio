@@ -1,35 +1,46 @@
+import { useEffect } from "react"; // Importer uniquement les hooks nécessaires
 import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import "../styles/components/_skills.scss";
 import SkillCard from "./SkillCard";
 import skills from "../content/skills.json";
 
 const Skills = () => {
   const { t } = useTranslation("skills");
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ threshold: 0.3 });
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, // Chaque enfant apparaît avec un délai
+        staggerChildren: 0.2,
       },
     },
   };
 
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+
   return (
-    <section className="skills">
+    <section className="skills" ref={ref}>
       <h2>{t("title")}</h2>
       {t("description") && (
         <p className="skills__description">{t("description")}</p>
       )}
 
-      {/* Display skillcards */}
       <motion.div
         className="skills__grid"
-        variants={containerVariants} // Animation collective
+        variants={containerVariants}
         initial="hidden"
-        animate="visible"
+        animate={controls}
       >
         {skills.map((skill) => (
           <SkillCard

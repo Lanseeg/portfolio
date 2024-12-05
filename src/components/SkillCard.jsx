@@ -12,10 +12,10 @@ const SkillCard = ({ name, description, image }) => {
     <motion.div
       className="skill-card"
       variants={cardVariants}
-      whileHover={{ scale: 1.05, boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.2)' }} // Animation au hover
-      whileTap={{ scale: 0.95, boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.3)' }}  // Animation au clic
+      whileHover={{ scale: 1.05, boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.2)' }}
+      whileTap={{ scale: 0.95, boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.3)' }}
     >
-      {/* Afficher une image si elle existe */}
+      {/* Display the image if it exists */}
       {image && (
         <div className="skill-card__image-container">
           <img
