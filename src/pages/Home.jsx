@@ -4,6 +4,7 @@ import "../styles/pages/_home.scss";
 import Presentation from '../components/Presentation';
 import Skills from "../components/Skills";
 import Projects from "../components/Projects";
+import Education from "../components/Education";
 
 const Home = ({ language }) => {
   return (
@@ -11,6 +12,7 @@ const Home = ({ language }) => {
       <Presentation language={language} />
       <Skills />
       <Projects />
+      <Education />
     </div>
   );
 };

@@ -1,0 +1,61 @@
+{
+  "title": "Stummadurioù",
+  "description": "Setu amañ ma hent studi.",
+  "items": [
+    {
+      "title": "Marc'hata",
+      "institution": "Skol-veur Breizh-Uhel",
+      "keySkills": [
+        "Arc'hantaouiñ ar merañ", 
+        "Merañ al lojistikel hag ar chadenn pourveziñ", 
+        "Merañ an embregerezhioù", 
+        "Marc'hata etrebroadel ha merañ ar gwerzhañ"
+      ],
+      "startDate": "2009-09-01",
+      "endDate": "2011-06-01"
+    },
+    {
+      "title": "Bachelor of Business in International Business Management",
+      "institution": "Athlone Institute of Technology (Ireland)",
+      "keySkills": [
+        "Managerial Finance", 
+        "Logistics and supply chain management", 
+        "Business Management", 
+        "International Marketing & Sales Management"
+      ],
+      "startDate": "2011-09-01",
+      "endDate": "2012-06-01"
+    },
+    {
+      "title": "Master Marketing & Management",
+      "institution": "Toulouse School of Management (Bro Ch'all)",
+      "keySkills": [
+        "Master II Merañ arbennikaet war ar Prenañ",
+        "Master I Marc'hata & Neveziñ arbennikaet war ar Prenañ", 
+        "Prenañ Greantel",
+        "Lojistikel",
+        "Arc'hant",
+        "Kehentiñ",
+        "Gwir",
+        "Merañ ar raktresoù"
+      ],
+      "startDate": "2012-09-01",
+      "endDate": "2014-06-01"
+    },
+    {
+      "title": "Diorroer web",
+      "institution": "Openclassrooms",
+      "keySkills": [
+        "Frontend: React.js, SASS, HTML/CSS",
+        "Backend: Node, Express, API Restful",
+        "diorren arloadoù web",
+        "MongoDB",
+        "JavaScript",
+        "Mont e darempred gant ar web",
+        "SEO"
+      ],
+      "startDate": "2024-05-01",
+      "endDate": "2024-12-09"
+    }
+  ]
+}

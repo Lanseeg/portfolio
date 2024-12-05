@@ -1,0 +1,61 @@
+{
+  "title": "Education",
+  "description": "Here is my educational journey.",
+  "items": [
+    {
+      "title": "Marketing",
+      "institution": "University of Western Brittany",
+      "keySkills": [
+        "Managerial Finance", 
+        "Logistics and supply chain management", 
+        "Business Management", 
+        "International Marketing & Sales Management"
+      ],
+      "startDate": "2009-09-01",
+      "endDate": "2011-06-01"
+    },
+    {
+      "title": "Bachelor of Business in International Business Management",
+      "institution": "Athlone Institute of Technology (Ireland)",
+      "keySkills": [
+        "Managerial Finance", 
+        "Logistics and supply chain management", 
+        "Business Management", 
+        "International Marketing & Sales Management"
+      ],
+      "startDate": "2011-09-01",
+      "endDate": "2012-06-01"
+    },
+    {
+      "title": "Master Marketing & Management",
+      "institution": "Toulouse School of Management (France)",
+      "keySkills": [
+        "Master II Management specializing in Purchasing",
+        "Master I Marketing & Innovation specializing in Purchasing", 
+        "Industrial Purchasing",
+        "Logistics",
+        "Finance",
+        "Communication",
+        "Law",
+        "Project Management"
+      ],
+      "startDate": "2012-09-01",
+      "endDate": "2014-06-01"
+    },
+    {
+      "title": "Web Developer",
+      "institution": "Openclassrooms",
+      "keySkills": [
+        "Frontend: React.js, SASS, HTML/CSS",
+        "Backend: Node, Express, API Restful",
+        "Web apps development",
+        "MongoDB",
+        "JavaScript",
+        "Web accessibility",
+        "SEO"
+      ],
+      "startDate": "2024-05-01",
+      "endDate": "2024-12-09"
+    }
+  ]
+}

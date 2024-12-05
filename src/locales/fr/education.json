@@ -1,0 +1,61 @@
+{
+  "title": "Formation",
+  "description": "Voici mon parcours éducatif.",
+  "items": [
+    {
+      "title": "Techniques de commercialisation",
+      "institution": "Université de Bretagne Occidentale",
+      "keySkills": [
+        "Finance managériale", 
+        "Gestion logistique et de la chaîne d'approvisionnement", 
+        "Gestion d'entreprise", 
+        "Gestion internationale du marketing et des ventes"
+      ],
+      "startDate": "2009-09-01",
+      "endDate": "2011-06-01"
+    },
+    {
+      "title": "Bachelor of Business in International Business Management",
+      "institution": "Athlone Institute of Technology (Ireland)",
+      "keySkills": [
+        "Finance managériale", 
+        "Logistique et gestion de la chaîne d'approvisionnement", 
+        "Gestion d'entreprise", 
+        "Gestion internationale du marketing et des ventes"
+      ],
+      "startDate": "2011-09-01",
+      "endDate": "2012-06-01"
+    },
+    {
+      "title": "Master Marketing & Management",
+      "institution": "Toulouse School of Management",
+      "keySkills": [
+        "Master II Management spécialité Achats",
+        "Master I Marketing & Innovation spécialité Achats", 
+        "Achats industriels",
+        "Logistique",
+        "Finance",
+        "Communication",
+        "Droit",
+        "Gestion de projets"
+      ],
+      "startDate": "2012-09-01",
+      "endDate": "2014-06-01"
+    },
+    {
+      "title": "Développeur web",
+      "institution": "Openclassrooms",
+      "keySkills": [
+        "Frontend: React.js, SASS, HTML/CSS",
+        "Backend: Node, Express, API Restful",
+        "Développement d'applications web",
+        "MongoDB",
+        "JavaScript",
+        "Accessibilité web",
+        "SEO"
+      ],
+      "startDate": "2024-05-01",
+      "endDate": "2024-12-09"
+    }
+  ]
+}

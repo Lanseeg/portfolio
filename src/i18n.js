@@ -2,23 +2,33 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
-// import translation files
+// 1 - Import JSON
+//NAV
 import enNav from './locales/en/nav.json';
 import frNav from './locales/fr/nav.json';
 import brNav from './locales/br/nav.json';
+//PRESENTATION
 import enPresentation from './locales/en/presentation.json';
 import frPresentation from './locales/fr/presentation.json';
 import brPresentation from './locales/br/presentation.json';
+//SKILLS
 import enSkills from './locales/en/skills.json';
 import frSkills from './locales/fr/skills.json';
 import brSkills from './locales/br/skills.json';
+//PROJECTS
 import enProjects from './locales/en/projects.json';
 import frProjects from './locales/fr/projects.json';
 import brProjects from './locales/br/projects.json';
+//PROJECTCARD
 import enProjectCard from './locales/en/projectcard.json';
 import frProjectCard from './locales/fr/projectcard.json';
 import brProjectCard from './locales/br/projectcard.json';
+//EDUCATION
+import enEducation from './locales/en/education.json';
+import frEducation from './locales/fr/education.json';
+import brEducation from './locales/br/education.json';
 
+// 2 - Add ressource & namespace
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -30,6 +40,7 @@ i18n
         skills: enSkills,
         projects: enProjects,
         projectCard: enProjectCard,
+        education: enEducation,
       },
       fr: {
         nav: frNav,
@@ -37,6 +48,7 @@ i18n
         skills: frSkills,
         projects: frProjects,
         projectCard: frProjectCard,
+        education: frEducation,
       },
       br: {
         nav: brNav,
@@ -44,10 +56,11 @@ i18n
         skills: brSkills,
         projects: brProjects,
         projectCard: brProjectCard,
+        education: brEducation,
       },
     },
     fallbackLng: 'en',
-    ns: ['nav', 'presentation', 'skills', 'projects', 'projectCard'],
+    ns: ['nav', 'presentation', 'skills', 'projects', 'projectCard', 'education'],
     defaultNS: 'projects',
     interpolation: {
       escapeValue: false,

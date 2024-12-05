@@ -1,0 +1,45 @@
+.education {
+  padding: 20px;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__item {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  &__institution {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+  }
+
+  &__dates {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 10px;
+  }
+
+  &__skills {
+    list-style: none;
+    padding: 0;
+
+    li {
+      font-size: 0.9rem;
+      color: #333;
+      margin-bottom: 5px;
+    }
+  }
+}
