@@ -17,7 +17,7 @@
   
     p {
       font-size: 2rem;
-      font-family: vars.$font-fourth;
+      font-family: vars.$font-main;
       color: vars.$primary-color;
     }
 
@@ -50,6 +50,7 @@
         border-radius: 5px;
         line-height: 1;
         transition: background-color 0.3s ease, transform 0.3s ease;
+        border: 1px solid vars.$secondary-color;
 
         &.github-button {
           background-color: #24292e;

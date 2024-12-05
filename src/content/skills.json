@@ -1,18 +1,42 @@
 [
-    {
-        "name": "React JS",
-        "level": "3"
-    },
-    {
-        "name": "Express JS",
-        "level": "3"
-    },
-    {
-        "name": "HTML/CSS",
-        "level": "5"
-    },
-    {
-        "name": "Project management",
-        "level": "5"
-    }
+  {
+    "name": "React JS",
+    "description": "A JavaScript library for building user interfaces.",
+    "image": "/images/skills/react.webp"
+  },
+  {
+    "name": "Node.JS",
+    "description": "",
+    "image": "/images/skills/node.webp"
+  },
+  {
+    "name": "Mongo DB",
+    "description": "",
+    "image": "/images/skills/mongo.webp"
+  },
+  {
+    "name": "HTML/CSS",
+    "description": "The building blocks of the web.",
+    "image": "/images/skills/css.webp"
+  },
+  {
+    "name": "SASS",
+    "description": "",
+    "image": "/images/skills/sass.webp"
+  },
+  {
+    "name": "PhP",
+    "description": "",
+    "image": "/images/skills/php.webp"
+  },
+  {
+    "name": "MySQL",
+    "description": "",
+    "image": "/images/skills/mysql.webp"
+  },
+  {
+    "name": "GitHub",
+    "description": "",
+    "image": "/images/skills/github.webp"
+  }
 ]

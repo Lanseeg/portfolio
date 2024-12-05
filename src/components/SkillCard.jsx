@@ -1,28 +1,29 @@
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
 import '../styles/components/_skillCard.scss';
 
-const SkillCard = ({ name, level }) => {
+const SkillCard = ({ name, description, image }) => {
   return (
     <div className="skill-card">
-      <h3 className="skill-card__name">{name}</h3>
-      <div className="skill-card__stars">
-        {[...Array(5)].map((_, index) => (
-          <FontAwesomeIcon
-            key={index}
-            icon={faStar}
-            className={index < level ? 'star active' : 'star'}
+      {/* Afficher une image si elle existe */}
+      {image && (
+        <div className="skill-card__image-container">
+          <img
+            src={image} // Utilisation directe du chemin absolu
+            alt={`${name} illustration`}
+            className="skill-card__image"
           />
-        ))}
-      </div>
+        </div>
+      )}
+      <h3 className="skill-card__name">{name}</h3>
+      {description && <p className="skill-card__description">{description}</p>}
     </div>
   );
 };
 
 SkillCard.propTypes = {
   name: PropTypes.string.isRequired,
-  level: PropTypes.number.isRequired,
+  description: PropTypes.string, // Optionnel
+  image: PropTypes.string // Optionnel
 };
 
 export default SkillCard;

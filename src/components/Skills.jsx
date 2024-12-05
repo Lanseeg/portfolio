@@ -14,7 +14,12 @@ const Skills = () => {
       {/* Display skillcards */}
       <div className="skills__grid">
         {skills.map((skill) => (
-          <SkillCard key={skill.name} name={skill.name} level={parseInt(skill.level, 10)} />
+          <SkillCard
+            key={skill.name}
+            name={skill.name}
+            description={skill.description}
+            image={skill.image}
+          />
         ))}
       </div>
     </section>
