@@ -24,9 +24,8 @@ const Skills = () => {
   useEffect(() => {
     if (inView) {
       controls.start("visible");
-    } else {
-      controls.start("hidden");
     }
+    // hidden can be added if needed with else
   }, [controls, inView]);
 
   return (
