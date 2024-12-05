@@ -3,11 +3,14 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import Language from "./Language";
+import Modal from "./Modal";
+import ContactForm from "./ContactForm";
 import "../styles/components/_nav.scss";
 
 const Nav = ({ language, handleLanguageChange }) => {
   const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const closeMenu = () => {
     setIsMenuOpen(false);
@@ -15,6 +18,16 @@ const Nav = ({ language, handleLanguageChange }) => {
 
   const toggleMenu = () => {
     setIsMenuOpen((prevState) => !prevState);
+  };
+
+  const openModal = (e) => {
+    e.preventDefault();
+    setIsModalOpen(true);
+    closeMenu();
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -39,12 +52,14 @@ const Nav = ({ language, handleLanguageChange }) => {
             </NavLink>
           </li>
           <li className="nav__item">
-            <NavLink
-              to="/contact"
-              className={({ isActive }) => (isActive ? "active" : "")}
+            {/* Link to open the modal */}
+            <a
+              href="#contact"
+              className="nav__link"
+              onClick={(e) => openModal(e)}
             >
               {t("contact")}
-            </NavLink>
+            </a>
           </li>
         </ul>
 
@@ -80,13 +95,13 @@ const Nav = ({ language, handleLanguageChange }) => {
             </NavLink>
           </li>
           <li className="nav__item">
-            <NavLink
-              to="/contact"
-              className={({ isActive }) => (isActive ? "active" : "")}
-              onClick={closeMenu}
+            <a
+              href="#contact"
+              className="nav__link"
+              onClick={(e) => openModal(e)}
             >
               {t("contact")}
-            </NavLink>
+            </a>
           </li>
         </ul>
         {/* Dropdown language selector */}
@@ -97,6 +112,11 @@ const Nav = ({ language, handleLanguageChange }) => {
           />
         </div>
       </div>
+
+      {/* Modal with contact form */}
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <ContactForm />
+      </Modal>
     </>
   );
 };
