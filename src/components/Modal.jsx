@@ -4,25 +4,24 @@ import "../styles/components/_modal.scss";
 
 const Modal = ({ isOpen, onClose, children }) => {
   useEffect(() => {
-    // Fermer la modale sur "Esc"
+    // Close clicking Esc. key
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
         onClose();
       }
     };
 
-    // Attacher l'écouteur d'événements
+    // Event listener
     if (isOpen) {
       window.addEventListener("keydown", handleKeyDown);
     }
 
-    // Nettoyage
+    // Clean up
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isOpen, onClose]);
 
-  // Si la modale n'est pas ouverte, ne rien afficher
   if (!isOpen) {
     return null;
   }
@@ -31,7 +30,7 @@ const Modal = ({ isOpen, onClose, children }) => {
     <div className="modal-background" onClick={onClose}>
       <div
         className="modal-window"
-        onClick={(e) => e.stopPropagation()} // Empêche la propagation pour éviter de fermer en cliquant à l'intérieur
+        onClick={(e) => e.stopPropagation()}
       >
         <header className="modal-header">
           <button className="modal-close" onClick={onClose}>
@@ -40,18 +39,17 @@ const Modal = ({ isOpen, onClose, children }) => {
         </header>
         <section className="modal-content">{children}</section>
         <footer className="modal-footer">
-          {/* Vous pouvez inclure des boutons ou autres éléments ici */}
+          {/* content can be added here */}
         </footer>
       </div>
     </div>
   );
 };
 
-// Validation des props
 Modal.propTypes = {
-  isOpen: PropTypes.bool.isRequired, // La modale doit être ouverte ou fermée
-  onClose: PropTypes.func.isRequired, // Fonction de fermeture
-  children: PropTypes.node, // Contenu de la modale
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  children: PropTypes.node,
 };
 
 export default Modal;

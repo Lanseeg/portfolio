@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 import Header from './Header';
 import Footer from './Footer';
 
-const Layout = ({ children, language, handleLanguageChange }) => {
+const Layout = ({ children }) => {
   return (
     <div className="layout">
-      <Header language={language} handleLanguageChange={handleLanguageChange} />
+      <Header />
       <main>{children}</main>
       <Footer />
     </div>
@@ -17,8 +17,6 @@ const Layout = ({ children, language, handleLanguageChange }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  language: PropTypes.string.isRequired,
-  handleLanguageChange: PropTypes.func.isRequired,
 };
 
 export default Layout;

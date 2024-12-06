@@ -1,26 +1,18 @@
-// src/components/Language.jsx
-import PropTypes from 'prop-types';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import '../styles/components/_language.scss';
 
-const Language = ({ language, handleLanguageChange }) => {
+const Language = () => {
+  const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
-
-  // Read language from localStorage
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem('selectedLanguage');
-    if (savedLanguage && savedLanguage !== language) {
-      handleLanguageChange(savedLanguage);
-    }
-  }, [language, handleLanguageChange]);
 
   const toggleMenu = () => {
     setIsOpen((prevState) => !prevState);
   };
 
   const selectLanguage = (lang) => {
-    handleLanguageChange(lang);
-    localStorage.setItem('selectedLanguage', lang);
+    i18n.changeLanguage(lang);
+    localStorage.setItem('language', lang);
     setIsOpen(false);
   };
 
@@ -36,9 +28,9 @@ const Language = ({ language, handleLanguageChange }) => {
         onClick={toggleMenu}
         aria-haspopup="menu"
         aria-expanded={isOpen}
-        aria-label={`Current language: ${languageLabels[language]}`}
+        aria-label={`Current language: ${languageLabels[i18n.language]}`}
       >
-        {languageLabels[language]}
+        {languageLabels[i18n.language]}
       </button>
       {isOpen && (
         <ul role="menu" className="language-menu">
@@ -46,7 +38,7 @@ const Language = ({ language, handleLanguageChange }) => {
             <li key={lang}>
               <button
                 onClick={() => selectLanguage(lang)}
-                className={language === lang ? 'active' : ''}
+                className={i18n.language === lang ? 'active' : ''}
                 role="menuitem"
                 aria-label={`Switch to ${label}`}
               >
@@ -58,11 +50,6 @@ const Language = ({ language, handleLanguageChange }) => {
       )}
     </div>
   );
-};
-
-Language.propTypes = {
-  language: PropTypes.string.isRequired,
-  handleLanguageChange: PropTypes.func.isRequired,
 };
 
 export default Language;

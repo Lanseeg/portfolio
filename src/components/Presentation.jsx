@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 import "../styles/components/_presentation.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -29,10 +28,6 @@ const Presentation = () => {
       </div>
     </section>
   );
-};
-
-Presentation.propTypes = {
-  language: PropTypes.string.isRequired,
 };
 
 export default Presentation;

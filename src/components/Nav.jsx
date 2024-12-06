@@ -1,23 +1,29 @@
-import PropTypes from "prop-types";
+// src/components/Nav.jsx
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
-import Language from "./Language";
 import Modal from "./Modal";
 import ContactForm from "./ContactForm";
 import "../styles/components/_nav.scss";
 
-const Nav = ({ language, handleLanguageChange }) => {
-  const { t } = useTranslation();
+const Nav = () => {
+  const { t } = useTranslation("nav"); // Namespace "nav"
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
+  // Debug
+  /*
+  useEffect(() => {
+    console.log("Current language in i18next:", i18n.language);
+  }, [i18n.language]);
+  */
 
   const toggleMenu = () => {
     setIsMenuOpen((prevState) => !prevState);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
   };
 
   const openModal = (e) => {
@@ -52,7 +58,6 @@ const Nav = ({ language, handleLanguageChange }) => {
             </NavLink>
           </li>
           <li className="nav__item">
-            {/* Link to open the modal */}
             <a
               href="#contact"
               className="nav__link"
@@ -104,13 +109,6 @@ const Nav = ({ language, handleLanguageChange }) => {
             </a>
           </li>
         </ul>
-        {/* Dropdown language selector */}
-        <div className="nav__language">
-          <Language
-            language={language}
-            handleLanguageChange={handleLanguageChange}
-          />
-        </div>
       </div>
 
       {/* Modal with contact form */}
@@ -119,11 +117,6 @@ const Nav = ({ language, handleLanguageChange }) => {
       </Modal>
     </>
   );
-};
-
-Nav.propTypes = {
-  language: PropTypes.string.isRequired,
-  handleLanguageChange: PropTypes.func.isRequired,
 };
 
 export default Nav;
