@@ -1,11 +1,17 @@
-import { useTranslation } from 'react-i18next';
-import ProjectCard from './ProjectCard';
-import Slider from 'react-slick';
-import projectCards from '../locales/en/projectcard.json';
-import '../styles/components/_projects.scss';
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import ProjectCard from "./ProjectCard";
+import Slider from "react-slick";
+import Modal from "./Modal";
+import ProjectDetails from "./ProjectDetails";
+import projectCards from "../locales/en/projectcard.json";
+import useModal from "../hooks/useModal";
+import "../styles/components/_projects.scss";
 
 const Projects = () => {
-  const { t } = useTranslation('projects'); // Namespace 'projects'
+  const { t } = useTranslation("projects"); // Namespace 'projects'
+  const { isModalOpen, openModal, closeModal } = useModal();
+  const [selectedProject, setSelectedProject] = useState(null);
 
   // Configuration de react-slick
   const settings = {
@@ -31,10 +37,15 @@ const Projects = () => {
     ],
   };
 
+  const handleButtonClick = (project) => {
+    setSelectedProject(project);
+    openModal();
+  };
+
   return (
     <section className="projects">
-      <h2>{t('title')}</h2>
-      {t('description') && <p className="projects__description">{t('description')}</p>}
+      <h2>{t("title")}</h2>
+      {t("description") && <p className="projects__description">{t("description")}</p>}
 
       {/* Slider React-Slick */}
       <Slider {...settings}>
@@ -45,10 +56,24 @@ const Projects = () => {
               image={project.image}
               tags={project.tags}
               description={project.description}
+              onButtonClick={() => handleButtonClick(project)}
             />
           </div>
         ))}
       </Slider>
+
+      {/* Modale pour afficher les détails du projet */}
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        {selectedProject && (
+          <ProjectDetails
+            title={selectedProject.title}
+            description={selectedProject.description}
+            tags={selectedProject.tags}
+            image={selectedProject.image}
+            onClose={closeModal}
+          />
+        )}
+      </Modal>
     </section>
   );
 };
