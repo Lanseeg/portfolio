@@ -2,80 +2,78 @@
 @use '../abstracts/variables' as vars;
 @use '../abstracts/mixins' as mixins;
 .presentation {
-    padding: 20px;
-    background-color: vars.$third-color;
-    text-align: center;
-  
-    h1 {
-      font-size: 1.8rem;
-      font-family: vars.$font-main;
-      font-size: 3rem;
-      font-weight: 100;
-      margin-bottom: 10px;
-      color: vars.$secondary-color;
-    }
-  
-    p {
-      font-size: 2rem;
-      font-family: vars.$font-main;
-      color: vars.$primary-color;
+  padding: 20px;
+  background-color: vars.$third-color;
+  text-align: center;
+
+  h1 {
+    font-family: vars.$font-main;
+    font-size: 3rem;
+    font-weight: 100;
+    margin-bottom: 10px;
+    color: vars.$secondary-color;
+  }
+
+  p {
+    font-size: 2rem;
+    font-family: vars.$font-main;
+    color: vars.$primary-color;
+  }
+
+  .presentation__buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+
+    @include mixins.respond-to(tablet) {
+      flex-direction: column;
+      align-items: center;
     }
 
-    .presentation__buttons {
-      margin-top: 20px;
+    .button {
       display: inline-flex;
-      gap: 24px;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 15px 24px;
+      font-size: 1rem;
+      font-weight: bold;
+      font-family: vars.$font-main;
+      text-decoration: none;
+      border-radius: 5px;
+      line-height: 1;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      border: 1px solid vars.$secondary-color;
 
-      
-      @include mixins.respond-to(tablet) {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+      &:hover {
+        transform: scale(1.05);
       }
-  
-    
-      .button {
-        min-width: 250px;
-        min-height: 75px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        padding: 24px;
-        font-size: 1rem;
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 5px;
-        line-height: 1;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-        border: 1px solid vars.$secondary-color;
 
-        &.github-button {
-          background-color: #24292e;
-          color: #fff;
-    
-          &:hover {
-            background-color: #333;
-            transform: scale(1.05);
-          }
-        }
-    
-        &.contact-button {
-          background-color: vars.$primary-color;
-          color: #fff;
-    
-          &:hover {
-            transform: scale(1.05);
-          }
-        }
-    
-        svg {
-          font-size: 1.5rem;
-          padding-bottom: 6px;
-        }
+      svg {
+        font-size: 1.2rem;
+        margin-right: 8px;
+      }
+    }
+
+    /* Bouton GitHub */
+    .github-button {
+      background-color: #24292e;
+      color: #fff;
+
+      &:hover {
+        background-color: #333;
+      }
+    }
+
+    /* Bouton Contact */
+    .contact-button {
+      background-color: vars.$primary-color;
+      color: #fff;
+
+      &:hover {
+        background-color: color-mix(in srgb, white 10%, vars.$primary-color 90%);
       }
     }
   }
-  
+}

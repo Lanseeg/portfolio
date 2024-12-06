@@ -4,12 +4,14 @@ import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import Modal from "./Modal";
 import ContactForm from "./ContactForm";
+import useModal from "../hooks/useModal";
+import Language from "./Language";
 import "../styles/components/_nav.scss";
 
 const Nav = () => {
   const { t } = useTranslation("nav"); // Namespace "nav"
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { isModalOpen, openModal, closeModal } = useModal();
 
   // Debug
   /*
@@ -24,16 +26,6 @@ const Nav = () => {
 
   const closeMenu = () => {
     setIsMenuOpen(false);
-  };
-
-  const openModal = (e) => {
-    e.preventDefault();
-    setIsModalOpen(true);
-    closeMenu();
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
   };
 
   return (
@@ -58,11 +50,7 @@ const Nav = () => {
             </NavLink>
           </li>
           <li className="nav__item">
-            <a
-              href="#contact"
-              className="nav__link"
-              onClick={(e) => openModal(e)}
-            >
+            <a href="#contact" className="nav__link" onClick={openModal}>
               {t("contact")}
             </a>
           </li>
@@ -100,15 +88,19 @@ const Nav = () => {
             </NavLink>
           </li>
           <li className="nav__item">
-            <a
-              href="#contact"
-              className="nav__link"
-              onClick={(e) => openModal(e)}
-            >
+            <a href="#contact" className="nav__link" onClick={openModal}>
               {t("contact")}
             </a>
           </li>
         </ul>
+
+        {/* Dropdown language selector */}
+        <div className="nav__language">
+          <Language />
+        </div>
+
+
+
       </div>
 
       {/* Modal with contact form */}

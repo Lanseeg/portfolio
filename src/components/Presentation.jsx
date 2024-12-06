@@ -2,17 +2,19 @@ import { useTranslation } from "react-i18next";
 import "../styles/components/_presentation.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { NavLink } from "react-router-dom";
+import Modal from "./Modal";
+import ContactForm from "./ContactForm";
+import useModal from "../hooks/useModal";
 
 const Presentation = () => {
   const { t } = useTranslation("presentation");
+  const { isModalOpen, openModal, closeModal } = useModal();
 
   return (
     <section className="presentation">
       <h1>{t("title")}</h1>
       <p>{t("description")}</p>
       <div className="presentation__buttons">
-        {/* GitHub Button */}
         <a
           href="https://github.com/Lanseeg"
           target="_blank"
@@ -21,11 +23,15 @@ const Presentation = () => {
         >
           <FontAwesomeIcon icon={faGithub} /> {t("github")}
         </a>
-        {/* Contact Button */}
-        <NavLink to="/contact" className="button contact-button">
+        <button className="button contact-button" onClick={openModal}>
           {t("contact")}
-        </NavLink>
+        </button>
       </div>
+
+      {/* Modal with contact form */}
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <ContactForm />
+      </Modal>
     </section>
   );
 };
