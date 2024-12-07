@@ -12,5 +12,12 @@
     "tags": ["Back-end"],
     "images": ["/images/projects/p2i1.jpg", "/images/projects/p2i2.jpg", "/images/projects/p2i3.png"],
     "link": "https://github.com/Lanseeg/oc-p6-grimoire"
+  },
+  {
+    "id": "3",
+    "title": "Accomodation booking - Kasa",
+    "tags": ["Front-end"],
+    "images": ["/images/projects/p3i1.jpg", "/images/projects/p3i2.jpg", "/images/projects/p3i3.png"],
+    "link": "https://github.com/Lanseeg/oc-p5-kasa"
   }
 ]

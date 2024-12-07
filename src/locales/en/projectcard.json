@@ -5,6 +5,9 @@
     },
     "2": {
       "description": "Using MongoDB, NodeJS, and Express, 'Mon Vieux Grimoire' is a web application that allows users to add books, rate them, and view other users' reviews. Client requirements include providing a simple way for users to manage and evaluate books, ensuring a secure and efficient interface, and facilitating access to information through a RESTful API."
-    }
+    },
+    "3": {
+      "description": "Kasa is a property rental web application developed for the OpenClassrooms Web Developer course. The project involves creating a React application with reusable components, a modern and responsive interface, dynamic data from a JSON file, a navigation system using React Router, and style management with Sass. It demonstrates proficiency in React, SCSS, and web development best practices."
+  }
   }
 }

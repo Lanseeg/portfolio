@@ -5,6 +5,9 @@
     },
     "2": {
       "description": "Ouzhpenn MongoDB, NodeJS ha Express, 'Mon Vieux Grimoire' a zo un arload web evit ouzhpennañ levrioù, o notennañ, ha gwelet evezhiadennoù an implijerien all. Ezhommoù ar c'hliant a zo kinnig un doare eeun evit merañ ha barn levrioù, gwareziñ ur c'hef rid ha start, hag aesaat an distro d'an titouroù dre ur RESTful API."
+    },
+    "3": {
+      "description": "Kasa a zo ur meziant web evit feurmiñ tiez diorret evit kentel Diorrenner Web OpenClassrooms. Ar raktres a c'houlenn krouiñ un arload React gant stroboù adimplijabl, un etrefas modern ha responsive, roadennoù dinamek eus ur restr JSON, ur reizhiad mirerezh gant React Router, hag ur mererezh stil gant Sass. Diskouez a ra ur barregezh mat war React, SCSS hag ar pleustrioù gwellañ evit diorren web."
     }
   }
 }

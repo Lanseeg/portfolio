@@ -20,9 +20,6 @@ const ProjectDetails = ({ project }) => {
 
   return (
     <div className="project-details">
-      <button className="close-button" onClick={project.onClose} aria-label="Close">
-        ×
-      </button>
       <h2 className="project-details__title">
         {t(`items.${project.id}.title`, project.title)}
       </h2>
