@@ -1,10 +1,9 @@
-// src/components/ProjectCard.jsx
-import PropTypes from 'prop-types';
-import '../styles/components/_projectCard.scss';
+import PropTypes from "prop-types";
+import "../styles/components/_projectCard.scss";
 
-const ProjectCard = ({ title, image, tags, description, onButtonClick }) => {
+const ProjectCard = ({ title, image, tags, onButtonClick }) => {
   return (
-    <div className="project-card" style={image ? { backgroundImage: `url(${image})` } : {}}>
+    <div className="project-card" style={image ? { backgroundImage: `url(${image})` } : { backgroundColor: "#ccc" }}>
       <div className="project-card__content">
         <h3 className="project-card__title">{title}</h3>
         {tags && (
@@ -16,8 +15,9 @@ const ProjectCard = ({ title, image, tags, description, onButtonClick }) => {
             ))}
           </ul>
         )}
-        {description && <p className="project-card__description">{description}</p>}
-        <button className="project-card__button" onClick={onButtonClick}>Voir les détails</button>
+        <button className="project-card__button" onClick={onButtonClick}>
+          Voir les détails
+        </button>
       </div>
     </div>
   );
@@ -27,8 +27,7 @@ ProjectCard.propTypes = {
   title: PropTypes.string.isRequired,
   image: PropTypes.string,
   tags: PropTypes.arrayOf(PropTypes.string),
-  description: PropTypes.string,
-  onButtonClick: PropTypes.func,
+  onButtonClick: PropTypes.func.isRequired,
 };
 
 export default ProjectCard;

@@ -1,45 +1,54 @@
+// src/components/Projects.jsx
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
 import ProjectCard from "./ProjectCard";
-import Slider from "react-slick";
 import Modal from "./Modal";
 import ProjectDetails from "./ProjectDetails";
-import projectCards from "../locales/en/projectcard.json";
-import useModal from "../hooks/useModal";
+import projectData from "../content/projectData.json"; // Import des données JSON
+import Slider from "react-slick"; // Import du Slider
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "../styles/components/_projects.scss";
+import { useTranslation } from "react-i18next";
 
 const Projects = () => {
-  const { t } = useTranslation("projects"); // Namespace 'projects'
-  const { isModalOpen, openModal, closeModal } = useModal();
+  const { t } = useTranslation("projects"); // Pour le titre et la description
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
 
-  // Configuration de react-slick
+  // Configuration du Slider
   const settings = {
-    dots: true, // Affiche les points de navigation
-    infinite: true, // Défilement infini
-    speed: 500, // Vitesse de transition en ms
-    slidesToShow: 3, // Nombre de slides visibles
-    slidesToScroll: 1, // Nombre de slides qui défilent à la fois
-    swipeToSlide: true, // Activer le swipe pour changer de slide
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    swipeToSlide: true,
     responsive: [
       {
-        breakpoint: 768, // En dessous de 768px
+        breakpoint: 1024,
         settings: {
-          slidesToShow: 1, // 1 slide visible sur mobile
+          slidesToShow: 2,
         },
       },
       {
-        breakpoint: 1024, // En dessous de 1024px
+        breakpoint: 768,
         settings: {
-          slidesToShow: 2, // 2 slides visibles sur tablette
+          slidesToShow: 1,
         },
       },
     ],
   };
 
-  const handleButtonClick = (project) => {
+  // Fonction pour ouvrir la modale avec le projet sélectionné
+  const handleOpenModal = (project) => {
     setSelectedProject(project);
-    openModal();
+    setIsModalOpen(true);
+  };
+
+  // Fonction pour fermer la modale
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
   };
 
   return (
@@ -49,30 +58,22 @@ const Projects = () => {
 
       {/* Slider React-Slick */}
       <Slider {...settings}>
-        {projectCards.map((project) => (
-          <div key={project.id}>
-            <ProjectCard
-              title={project.title}
-              image={project.image}
-              tags={project.tags}
-              description={project.description}
-              onButtonClick={() => handleButtonClick(project)}
-            />
-          </div>
-        ))}
-      </Slider>
+  {projectData.map((project) => (
+    <div key={project.id}>
+      <ProjectCard
+        title={project.title}
+        image={project.images[0]} // Prendre la première image du tableau
+        tags={project.tags}
+        onButtonClick={() => handleOpenModal(project)}
+      />
+    </div>
+  ))}
+</Slider>
+
 
       {/* Modale pour afficher les détails du projet */}
-      <Modal isOpen={isModalOpen} onClose={closeModal}>
-        {selectedProject && (
-          <ProjectDetails
-            title={selectedProject.title}
-            description={selectedProject.description}
-            tags={selectedProject.tags}
-            image={selectedProject.image}
-            onClose={closeModal}
-          />
-        )}
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+        {selectedProject && <ProjectDetails project={selectedProject} />}
       </Modal>
     </section>
   );
