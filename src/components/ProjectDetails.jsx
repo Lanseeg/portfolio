@@ -8,7 +8,7 @@ import "../styles/components/_project-details.scss";
 const ProjectDetails = ({ project }) => {
   const { t } = useTranslation("projectCard");
 
-  // Configuration du slider
+  // Slider configuration
   const settings = {
     dots: true,
     infinite: true,
@@ -27,7 +27,7 @@ const ProjectDetails = ({ project }) => {
         {t(`items.${project.id}.description`, project.description)}
       </p>
 
-      {/* Affichage des tags */}
+      {/* Tags display */}
       <div className="project-details__tags">
         {project.tags.map((tag, index) => (
           <span key={index} className="project-details__tag">
@@ -36,7 +36,7 @@ const ProjectDetails = ({ project }) => {
         ))}
       </div>
 
-            {/* Lien vers le projet */}
+            {/* Link to the project */}
             {project.link && (
         <div className="project-details__link">
           <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-details__button">
@@ -45,7 +45,7 @@ const ProjectDetails = ({ project }) => {
         </div>
       )}
 
-      {/* Slider pour les images */}
+      {/* Slider for images */}
       {project.images && project.images.length > 0 && (
         <div className="project-details__slider">
           <Slider {...settings}>

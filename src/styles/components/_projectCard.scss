@@ -1,40 +1,70 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mixins;
 .project-card {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
-    overflow: hidden;
-    color: #fff;
-    text-align: left;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  
-    &__content {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 15px;
-    }
-  
-    &__title {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
-  
-    &__tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-      list-style: none;
-      margin-bottom: 10px;
-  
-      &__tag {
-        background: #444;
-        padding: 5px 10px;
-        border-radius: 15px;
-        font-size: 0.8rem;
-      }
-    }
-  
-    &__description {
-      font-size: 1rem;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  overflow: hidden;
+  color: vars.$secondary-color;
+  text-align: left;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  &__content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+
+    @include mixins.respond-to(tablet) {
+      text-align: center;
     }
   }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    list-style: none;
+    margin-bottom: 10px;
+
+    @include mixins.respond-to(tablet) {
+      justify-content: center;
+    }
+
+    .project-card__tag {
+      background: rgba(163, 48, 2, 0.445);
+      padding: 5px 5px 0px 5px;
+      border-radius: 5px;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.project-card__icon-button {
+  background: transparent;
+  border: none;
+  color: vars.$secondary-color;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
   
+  &:hover,
+  &:focus {
+    color: vars.$primary-color;
+    transform: scale(1.6);
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid vars.$primary-color;
+    border-radius: 4px;
+  }
+}

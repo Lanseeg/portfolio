@@ -1,4 +1,6 @@
 import PropTypes from "prop-types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExpand } from "@fortawesome/free-solid-svg-icons";
 import "../styles/components/_projectCard.scss";
 
 const ProjectCard = ({ title, image, tags, onButtonClick }) => {
@@ -6,6 +8,7 @@ const ProjectCard = ({ title, image, tags, onButtonClick }) => {
     <div className="project-card" style={image ? { backgroundImage: `url(${image})` } : { backgroundColor: "#ccc" }}>
       <div className="project-card__content">
         <h3 className="project-card__title">{title}</h3>
+        
         {tags && (
           <ul className="project-card__tags">
             {tags.map((tag, index) => (
@@ -15,8 +18,12 @@ const ProjectCard = ({ title, image, tags, onButtonClick }) => {
             ))}
           </ul>
         )}
-        <button className="project-card__button" onClick={onButtonClick}>
-          Voir les détails
+        <button
+          className="project-card__icon-button"
+          onClick={onButtonClick}
+          aria-label="Voir les détails du projet"
+        >
+          <FontAwesomeIcon icon={faExpand} />
         </button>
       </div>
     </div>
