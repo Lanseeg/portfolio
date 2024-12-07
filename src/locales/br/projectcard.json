@@ -1,10 +1,10 @@
 {
   "items": {
     "1": {
-      "description": "BRThis is the description for Project 1."
+      "description": "Ar raktres-mañ en deus da bal diorren framm-davarn ur webv lec'hienn portfolio evit ur sevenourez diabarzh evit an ti ArchiWebos. Ar savlec'h a ziskouez labourioù ar sevenourez hag a zo gant un etrefas mererezh evit merañ ar mediaoù dre ur vodal enporzhiañ. Perzhioù pennañ a zo diskouezadenn dre vresk gant kargadur danvez dre API ha hizivadenn an DOM hep adkargañ, merañ ar mediaoù gant mererezh fazioù ha rakgwel ar skeudennoù, ur bajenn kennaskañ mererezh sur, hag ouzhpennañ ha dilemel raktresoù en amzer gwir. Teknologiezhioù implijet a zo HTML, CSS, JavaScript evit ar framm-davarn ha REST API gant Node.js evit ar framm-drek."
     },
     "2": {
-      "description": "BRThis is the description for Project 2."
+      "description": "Ouzhpenn MongoDB, NodeJS ha Express, 'Mon Vieux Grimoire' a zo un arload web evit ouzhpennañ levrioù, o notennañ, ha gwelet evezhiadennoù an implijerien all. Ezhommoù ar c'hliant a zo kinnig un doare eeun evit merañ ha barn levrioù, gwareziñ ur c'hef rid ha start, hag aesaat an distro d'an titouroù dre ur RESTful API."
     }
   }
 }

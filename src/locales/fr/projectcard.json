@@ -1,10 +1,10 @@
 {
   "items": {
     "1": {
-      "description": "FRThis is the description for Project 1."
+      "description": "Ce projet consiste à développer le front-end du site portfolio d'une architecte d'intérieur pour l'agence ArchiWebos. Le site présente les travaux de l'architecte et inclut une interface d'administration pour gérer les médias via une modale d'upload. Les fonctionnalités clés incluent l'affichage dynamique avec chargement des contenus via API et mise à jour du DOM sans rechargement, la gestion des médias avec gestion des erreurs et prévisualisation des images, une page de connexion sécurisée pour l'administration et la suppression et l'ajout de projets en temps réel. Les technologies utilisées sont HTML, CSS, JavaScript pour le front-end et une API REST avec Node.js pour le back-end."
     },
     "2": {
-      "description": "FRThis is the description for Project 2."
+      "description": "Utilisant MongoDB, NodeJS et Express, 'Mon Vieux Grimoire' est une application web permettant aux utilisateurs d'ajouter des livres, de les noter et de consulter les avis d'autres utilisateurs. Les besoins client incluent offrir aux utilisateurs un moyen simple de gérer et d'évaluer des livres, assurer une interface sécurisée et performante, et faciliter l'accès aux informations via une API RESTful."
     }
   }
 }

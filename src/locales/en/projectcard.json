@@ -1,10 +1,10 @@
 {
   "items": {
     "1": {
-      "description": "This is the description for Project 1."
+      "description": "This project involves developing the front-end of an interior architect's portfolio website for the ArchiWebos agency. The site showcases the architect's work and includes an admin interface for managing media through an upload modal. Key features include dynamic display with API-loaded content and DOM updates without reloading, media management with error handling and image previews, a secure admin login page, and real-time project addition and deletion. The technologies used are HTML, CSS, JavaScript for the front-end, and a REST API with Node.js for back-end communication."
     },
     "2": {
-      "description": "This is the description for Project 2."
+      "description": "Using MongoDB, NodeJS, and Express, 'Mon Vieux Grimoire' is a web application that allows users to add books, rate them, and view other users' reviews. Client requirements include providing a simple way for users to manage and evaluate books, ensuring a secure and efficient interface, and facilitating access to information through a RESTful API."
     }
   }
 }

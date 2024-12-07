@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "../styles/components/_project-details.scss";
 
 const ProjectDetails = ({ project }) => {
-  const { t } = useTranslation("projectCard"); // Utilise le namespace 'projectCard'
+  const { t } = useTranslation("projectCard");
 
   // Configuration du slider
   const settings = {
@@ -74,8 +74,8 @@ ProjectDetails.propTypes = {
     title: PropTypes.string.isRequired,
     tags: PropTypes.arrayOf(PropTypes.string).isRequired,
     description: PropTypes.string,
-    images: PropTypes.arrayOf(PropTypes.string), // Validation pour les images
-    link: PropTypes.string,                     // Validation pour le lien
+    images: PropTypes.arrayOf(PropTypes.string),
+    link: PropTypes.string,
     onClose: PropTypes.func,
   }).isRequired,
 };

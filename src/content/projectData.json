@@ -1,18 +1,16 @@
 [
   {
     "id": "1",
-    "title": "Projet Exemple 1",
-    "description": "Description du Projet Exemple 1.",
-    "tags": ["React", "JavaScript", "CSS"],
-    "images": ["/images/projects/project1-image1.webp", "/images/projects/project1-image2.webp"],
-    "link": "https://www.google.com"
+    "title": "Sophie Bluel - Portfolio",
+    "tags": ["Front-end"],
+    "images": ["/images/projects/project1-image1.jpg", "/images/projects/project1-image2.jpg"],
+    "link": "https://github.com/Lanseeg/oc-p3-bluel"
   },
   {
     "id": "2",
-    "title": "Projet Exemple 2",
-    "description": "Description du Projet Exemple 2.",
-    "tags": ["Node.js", "Express", "MongoDB"],
-    "images": ["/images/projects/project2-image1.webp"],
-    "link": "https://www.google.com"
+    "title": "Mon Vieux Grimoire",
+    "tags": ["Back-end"],
+    "images": ["/images/projects/p2i1.jpg", "/images/projects/p2i2.jpg", "/images/projects/p2i3.png"],
+    "link": "https://github.com/Lanseeg/oc-p6-grimoire"
   }
 ]
