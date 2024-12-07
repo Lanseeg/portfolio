@@ -4,7 +4,7 @@
 
 .projects {
   text-align: center;
-  margin: 40px auto;
+  margin: 6px auto;
   padding: 20px;
 
   h2 {
@@ -29,6 +29,18 @@
     }
   }
 
+  &__filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: left;
+    margin-bottom: 10px;
+
+    @include mixins.respond-to(tablet) {
+      justify-content: center;
+    }
+  }
+
   &__filter-button {
     all: unset;
   
@@ -48,13 +60,13 @@
   }
 
   .slick-slider {
-    margin-top: 20px;
+    margin: 18px 6px 0px 6px;
 
     .slick-dots {
       bottom: -25px;
       li {
         button:before {
-          color: #333;
+          color: vars.$primary-color;
         }
       }
     }
@@ -62,11 +74,11 @@
     .slick-prev,
     .slick-next {
       z-index: 1;
-      color: #333;
+      color: vars.$primary-color;
 
       &:before {
         font-size: 20px;
-        color: #333;
+        color: vars.$primary-color;
       }
     }
   }

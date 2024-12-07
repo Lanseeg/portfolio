@@ -44,6 +44,10 @@
       padding: 5px 5px 0px 5px;
       border-radius: 5px;
       font-size: 0.8rem;
+
+      @include mixins.respond-to(tablet) {
+        font-size: 0.9rem;
+      }
     }
   }
 }

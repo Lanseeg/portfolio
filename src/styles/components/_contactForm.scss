@@ -1,15 +1,16 @@
+@use '../abstracts/variables' as vars;
+
 .contact-form {
   max-width: 600px;
   margin: 0 auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0px 20px 20px 20px;
+  background-color: vars.$third-color;
 
   h2 {
     font-size: 1.8rem;
     margin-bottom: 20px;
     text-align: center;
+    color: vars.$secondary-color;
   }
 
   .form-group {
@@ -19,46 +20,75 @@
       display: block;
       font-weight: bold;
       margin-bottom: 5px;
+      color: vars.$secondary-color;
     }
 
     input,
     textarea {
       width: 100%;
       padding: 10px;
-      border: 1px solid #ddd;
+      border: none;
       border-radius: 5px;
+      background-color: vars.$secondary-color;
+      font-family: vars.$font-main;
+      color: vars.$primary-color;
       font-size: 1rem;
+
+      // Applique le style d'erreur directement aux champs invalides
+      &.input-error {
+        background-color: #ce9224;
+        border: 6px solid vars.$primary-color;
+      }
     }
   }
 
   .contact-form__submit {
     width: 100%;
     padding: 12px 0;
-    background-color: #007bff;
+    background-color: vars.$primary-color;
     color: white;
     font-size: 1rem;
     font-weight: bold;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
-
+    transition: background-color 0.3s, transform 0.2s ease;
+  
     &:hover {
-      background-color: #0056b3;
+      background-color: #d4912b;
+      transform: scale(1.06);
+    }
+  
+    &.btn-disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+      transform: none;
     }
   }
+  
+  .input-error {
+    background-color: #ffe5e5;
+    border: 5px solid #ff4d4d;
+  }
+  
 
   .contact-form__status {
     margin-top: 15px;
     font-size: 1rem;
     text-align: center;
+    font-weight: bold;
 
     &.success {
-      color: green;
+      color: #28a745;
     }
 
     &.error {
-      color: red;
+      color: #dc3545;
+    }
+
+    &.info {
+      color: #ff9800;
     }
   }
+
 }

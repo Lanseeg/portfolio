@@ -1,3 +1,5 @@
+@use '../abstracts/variables' as vars;
+
 .modal-background {
   position: fixed;
   top: 0;
@@ -12,7 +14,7 @@
 }
 
 .modal-window {
-  background: #fff;
+  background: vars.$third-color;
   width: 80%;
   max-width: 500px;
   border-radius: 8px;
@@ -23,18 +25,25 @@
 }
 
 .modal-header {
-  padding: 16px;
-  background: #f4f4f4;
-  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  background: vars.$third-color;
   display: flex;
   justify-content: flex-end;
 }
 
 .modal-close {
+  margin-top: 6px;
+  margin-right: 12px;
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   cursor: pointer;
+  transition: transform 0.2s ease;
+  color: vars.$secondary-color;
+
+  &:hover {
+    transform: rotate(90deg);
+  }
 }
 
 .modal-content {
@@ -42,9 +51,8 @@
 }
 
 .modal-footer {
-  padding: 16px;
-  background: #f4f4f4;
-  border-top: 1px solid #ddd;
+  padding: 6px;
+  background: vars.$third-color;
   text-align: right;
 }
 

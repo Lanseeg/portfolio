@@ -33,7 +33,7 @@ const Modal = ({ isOpen, onClose, children }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <header className="modal-header">
-          <button className="modal-close" onClick={onClose}>
+          <button className="modal-close" title="Close" aria-label="Close" onClick={onClose}>
             &times;
           </button>
         </header>
