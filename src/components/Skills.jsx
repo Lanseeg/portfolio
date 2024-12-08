@@ -45,8 +45,8 @@ const Skills = () => {
           <SkillCard
             key={skill.name}
             name={skill.name}
-            description={skill.description}
             image={skill.image}
+            tags={skill.tags}
           />
         ))}
       </motion.div>

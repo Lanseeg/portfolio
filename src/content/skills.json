@@ -2,41 +2,68 @@
   {
     "name": "React JS",
     "description": "A JavaScript library for building user interfaces.",
-    "image": "/images/skills/react.webp"
-  },
-  {
-    "name": "Node.JS",
-    "description": "",
-    "image": "/images/skills/node.webp"
-  },
-  {
-    "name": "Mongo DB",
-    "description": "",
-    "image": "/images/skills/mongo.webp"
-  },
-  {
-    "name": "HTML/CSS",
-    "description": "The building blocks of the web.",
-    "image": "/images/skills/css.webp"
+    "image": "/images/skills/react.webp",
+    "tags": ["Front-end"]
   },
   {
     "name": "SASS",
     "description": "",
-    "image": "/images/skills/sass.webp"
+    "image": "/images/skills/sass.webp",
+    "tags": ["Front-end"]
+  },
+  {
+    "name": "Node.JS",
+    "description": "",
+    "image": "/images/skills/node.webp",
+    "tags": ["Front-end", "Back-end"]
+  },
+  {
+    "name": "Mongo DB",
+    "description": "",
+    "image": "/images/skills/mongo.webp",
+    "tags": ["Back-end"]
+  },
+  {
+    "name": "HTML/CSS/JS",
+    "description": "The building blocks of the web.",
+    "image": "/images/skills/css.webp",
+    "tags": ["Front-end", "Back-end"]
+
   },
   {
     "name": "PhP",
     "description": "",
-    "image": "/images/skills/php.webp"
+    "image": "/images/skills/php.webp",
+    "tags": ["Back-end"]
   },
   {
     "name": "MySQL",
     "description": "",
-    "image": "/images/skills/mysql.webp"
+    "image": "/images/skills/mysql.webp",
+    "tags": ["Back-end"]
   },
   {
     "name": "GitHub",
     "description": "",
-    "image": "/images/skills/github.webp"
+    "image": "/images/skills/github.webp",
+    "tags": ["Other"]
+  },
+  {
+    "name": "Purchasing",
+    "description": "",
+    "image": "/images/skills/purchasing.png",
+    "tags": ["Business"]
+  },
+  {
+    "name": "Excel",
+    "description": "",
+    "image": "/images/skills/excel.png",
+    "tags": ["Other"]
+  },
+  {
+    "name": "Arduino",
+    "description": "",
+    "image": "/images/skills/arduino.png",
+    "tags": ["Automation"]
   }
 ]
