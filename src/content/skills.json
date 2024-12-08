@@ -58,12 +58,18 @@
     "name": "Excel",
     "description": "",
     "image": "/images/skills/excel.png",
-    "tags": ["Other"]
+    "tags": ["Productivity"]
   },
   {
     "name": "Arduino",
     "description": "",
     "image": "/images/skills/arduino.png",
     "tags": ["Automation"]
+  },
+  {
+    "name": "WordPress",
+    "description": "",
+    "image": "/images/skills/wordpress.png",
+    "tags": ["Front-end"]
   }
 ]
