@@ -4,6 +4,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../styles/components/_project-details.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
 const ProjectDetails = ({ project }) => {
   const { t } = useTranslation("projectCard");
@@ -23,10 +25,20 @@ const ProjectDetails = ({ project }) => {
       <h2 className="project-details__title">
         {t(`items.${project.id}.title`, project.title)}
       </h2>
-      <p className="project-details__description">
-        {t(`items.${project.id}.description`, project.description)}
-      </p>
-
+      {/* Link to the project */}
+      {project.link && (
+        <div className="project-details__link">
+          <FontAwesomeIcon icon={faGlobe} className="project-details__icon" />
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-details__button"
+          >
+            Open site
+          </a>
+        </div>
+      )}
       {/* Tags display */}
       <div className="project-details__tags">
         {project.tags.map((tag, index) => (
@@ -35,16 +47,6 @@ const ProjectDetails = ({ project }) => {
           </span>
         ))}
       </div>
-
-            {/* Link to the project */}
-            {project.link && (
-        <div className="project-details__link">
-          <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-details__button">
-            Voir le projet
-          </a>
-        </div>
-      )}
-
       {/* Slider for images */}
       {project.images && project.images.length > 0 && (
         <div className="project-details__slider">
@@ -61,6 +63,9 @@ const ProjectDetails = ({ project }) => {
           </Slider>
         </div>
       )}
+      <p className="project-details__description">
+        {t(`items.${project.id}.description`, project.description)}
+      </p>
     </div>
   );
 };

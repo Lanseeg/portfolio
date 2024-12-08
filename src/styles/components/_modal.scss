@@ -15,7 +15,7 @@
 
 .modal-window {
   background: vars.$third-color;
-  width: 80%;
+  width: 90%;
   max-width: 500px;
   border-radius: 8px;
   overflow: hidden;
@@ -25,7 +25,7 @@
 }
 
 .modal-header {
-  padding: 8px;
+  padding: 0px 8px 8px 8px;
   background: vars.$third-color;
   display: flex;
   justify-content: flex-end;
@@ -47,7 +47,7 @@
 }
 
 .modal-content {
-  padding: 16px;
+  padding: 0px 16px 2px 16px;
 }
 
 .modal-footer {

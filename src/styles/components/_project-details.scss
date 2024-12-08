@@ -1,50 +1,93 @@
-// src/styles/components/_project-details.scss
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mixins;
+
 .project-details {
-    position: relative;
-    text-align: center;
-    padding: 20px;
-  
-    .close-button {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-  
-    &__image {
-      max-width: 100%;
-      border-radius: 8px;
-    }
-  
-    &__title {
-      font-size: 1.8rem;
-      margin-top: 20px;
-      color: #333;
-    }
-  
-    &__description {
-      margin: 15px 0;
-      font-size: 1rem;
-      color: #555;
-    }
-  
-    &__tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      margin-top: 10px;
-  
-      &__tag {
-        background-color: #007bff;
-        color: #fff;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 0.9rem;
-      }
+  position: relative;
+  text-align: center;
+  padding: 6px;
+  max-height: 90vh;
+
+  &__title {
+    font-size: 1.8rem;
+    margin: 0px !important;
+    color: #333;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  &__icon {
+    color: vars.$secondary-color;
+    padding-right: 8px;
+    font-size: 1.2rem;
+  }
+
+  &__image {
+    max-width: 100%;
+    max-height: 450px;
+    border-radius: 8px;
+
+    @include mixins.respond-to(mobile) {
+      max-height: 250px;
     }
   }
-  
+
+  &__description {
+    margin: 24px 0px 0px 0px;
+    font-size: 1rem;
+    color: vars.$secondary-color;
+    overflow-y: auto;
+    max-height: 100px;
+    text-align: left;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: vars.$secondary-color;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      color: vars.$primary-color;
+      transform: scale(1.07);
+    }
+
+    .project-details__button {
+      text-decoration: none;
+      margin-top: 6px;
+      color: inherit;
+      font-size: 1rem;
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  &__tag {
+    background-color: vars.$third-color;
+    border: 1px solid vars.$primary-color;
+    color: vars.$primary-color;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+  }
+
+}

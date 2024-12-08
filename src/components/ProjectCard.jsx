@@ -21,7 +21,7 @@ const ProjectCard = ({ title, image, tags, onButtonClick }) => {
         <button
           className="project-card__icon-button"
           onClick={onButtonClick}
-          aria-label="Voir les détails du projet"
+          aria-label="Details"
         >
           <FontAwesomeIcon icon={faExpand} />
         </button>
