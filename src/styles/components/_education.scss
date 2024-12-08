@@ -1,45 +1,90 @@
+@use '../abstracts/variables' as vars;
+
 .education {
   padding: 20px;
+  background-color: vars.$third-color;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: vars.$secondary-color;
+  }
+
+  &__description {
+    margin-bottom: 16px;
+    color: vars.$secondary-color;
+  }
 
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 6px;
   }
 
-  &__item {
-    background: #f9f9f9;
-    padding: 20px;
+  .collapse {
+    background-color: #3b3a3a;
+    color: vars.$secondary-color;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
 
-  &__title {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      background-color: vars.$third-color;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
 
-  &__institution {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 10px;
-  }
+      &:hover {
+        background-color: #464444;
+      }
+    }
 
-  &__dates {
-    font-size: 0.9rem;
-    color: #999;
-    margin-bottom: 10px;
-  }
+    &__icon {
+      font-size: 1.2rem;
+      color: vars.$secondary-color;
+      transition: transform 0.3s ease;
 
-  &__skills {
-    list-style: none;
-    padding: 0;
+      &--open {
+        transform: rotate(90deg);
+      }
+    }
 
-    li {
-      font-size: 0.9rem;
-      color: #333;
-      margin-bottom: 5px;
+    &__titles {
+      h3 {
+        font-size: 1.4rem;
+        margin: 0;
+        color: vars.$primary-color;
+      }
+
+      p {
+        font-size: 1rem;
+        color: vars.$secondary-color;
+        font-weight: bold;
+      }
+    }
+
+    &__toggle {
+      font-size: 1.2rem;
+      color: vars.$primary-color;
+      cursor: pointer;
+    }
+
+    &__content {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+      margin-left: 16px;
+
+      &--visible {
+        max-height: 500px;
+        opacity: 1;
+        padding: 16px;
+      }
     }
   }
 }
