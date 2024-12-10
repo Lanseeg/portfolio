@@ -5,6 +5,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Modal from "./Modal";
 import ContactForm from "./ContactForm";
 import useModal from "../hooks/useModal";
+import RotatingIcons from "./RotatingIcons";
 
 const Presentation = () => {
   const { t } = useTranslation("presentation");
@@ -12,8 +13,11 @@ const Presentation = () => {
 
   return (
     <section className="presentation">
+      <RotatingIcons />
+      <div className="presentation__text">
       <h1>{t("title")}</h1>
       <p>{t("description")}</p>
+      </div>
       <div className="presentation__buttons">
         <a
           href="https://github.com/Lanseeg"

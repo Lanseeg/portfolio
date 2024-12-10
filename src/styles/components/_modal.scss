@@ -17,6 +17,7 @@
   background: vars.$third-color;
   width: 90%;
   max-width: 500px;
+  max-height: 95vh;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -48,6 +49,7 @@
 
 .modal-content {
   padding: 0px 16px 2px 16px;
+  overflow-y: auto;
 }
 
 .modal-footer {

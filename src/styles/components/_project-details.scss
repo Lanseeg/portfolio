@@ -11,6 +11,7 @@
     font-size: 1.8rem;
     margin: 0px !important;
     color: #333;
+    text-align: center !important;
   }
 
   .close-button {
@@ -78,7 +79,7 @@
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 4px;
   }
 
   &__tag {
