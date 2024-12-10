@@ -45,7 +45,8 @@
     font-size: 1rem;
     color: vars.$secondary-color;
     overflow-y: auto;
-    max-height: 100px;
+    min-height: 100px;
+    max-height: 120px;
     text-align: left;
   }
 
