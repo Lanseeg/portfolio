@@ -1,9 +1,9 @@
 README
 Cloner le projet avec :
-git clone https://github.com/ton-nom-utilisateur/nom-du-projet.git
+git clone https://github.com/lanseeg/portfolio
 
 Accéder au dossier du projet :
-cd nom-du-projet
+cd portfolio
 
 Installer les dépendances :
 yarn install
