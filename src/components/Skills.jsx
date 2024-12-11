@@ -1,4 +1,4 @@
-import { useEffect } from "react"; // Importer uniquement les hooks nécessaires
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -25,16 +25,34 @@ const Skills = () => {
     if (inView) {
       controls.start("visible");
     }
-    // hidden can be added if needed with else
   }, [controls, inView]);
 
   return (
     <section className="skills" ref={ref}>
-      <h2>{t("title")}</h2>
+      {/* h2 animation */}
+      <motion.h2
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+        {t("title")}
+      </motion.h2>
+
+      {/* p animation */}
       {t("description") && (
-        <p className="skills__description">{t("description")}</p>
+        <motion.p
+          className="skills__description"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          {t("description")}
+        </motion.p>
       )}
 
+      {/* Animated grid */}
       <motion.div
         className="skills__grid"
         variants={containerVariants}

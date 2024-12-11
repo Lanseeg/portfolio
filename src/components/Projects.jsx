@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../styles/components/_projects.scss";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const { t } = useTranslation("projects");
@@ -59,7 +60,13 @@ const Projects = () => {
   };
 
   return (
-    <section className="projects">
+    <motion.section
+      className="projects"
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
       <h2>{t("title")}</h2>
       {t("description") && <p className="projects__description">{t("description")}</p>}
 
@@ -94,7 +101,7 @@ const Projects = () => {
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
         {selectedProject && <ProjectDetails project={selectedProject} />}
       </Modal>
-    </section>
+    </motion.section>
   );
 };
 

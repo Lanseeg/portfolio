@@ -6,6 +6,7 @@ import Modal from "./Modal";
 import ContactForm from "./ContactForm";
 import useModal from "../hooks/useModal";
 import RotatingIcons from "./RotatingIcons";
+import { motion } from "framer-motion";
 
 const Presentation = () => {
   const { t } = useTranslation("presentation");
@@ -14,11 +15,23 @@ const Presentation = () => {
   return (
     <section className="presentation">
       <RotatingIcons />
-      <div className="presentation__text">
-      <h1>{t("title")}</h1>
-      <p>{t("description")}</p>
-      </div>
-      <div className="presentation__buttons">
+
+      <motion.div
+        className="presentation__text"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <h1>{t("title")}</h1>
+        <p>{t("description")}</p>
+      </motion.div>
+
+      <motion.div
+        className="presentation__buttons"
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
         <a
           href="https://github.com/Lanseeg"
           target="_blank"
@@ -30,9 +43,8 @@ const Presentation = () => {
         <button className="button contact-button" onClick={openModal}>
           {t("contact")}
         </button>
-      </div>
+      </motion.div>
 
-      {/* Modal with contact form */}
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <ContactForm />
       </Modal>

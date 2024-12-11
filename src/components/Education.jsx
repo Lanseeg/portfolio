@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import Collapse from "./Collapse";
 import "../styles/components/_education.scss";
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 const Education = () => {
   const { t } = useTranslation("education");
@@ -21,7 +22,13 @@ const Education = () => {
   });
 
   return (
-    <section className="education">
+    <motion.section
+      className="education"
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
       <h2>{t("title")}</h2>
       {t("description") && (
         <p className="education__description">{t("description")}</p>
@@ -46,7 +53,7 @@ const Education = () => {
           </Collapse>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 
